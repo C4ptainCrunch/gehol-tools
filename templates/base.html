@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <title>Gehol tools</title>
+    {% block head %}
+    {% endblock %}
     <link href='http://fonts.googleapis.com/css?family=Carme' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
     <style>
         body {
             background-image:url("/static/stardust.png");
@@ -15,7 +16,7 @@
         }
 
         #content {
-            width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 

@@ -1,8 +1,23 @@
 {% extends "base.html" %}
-{% block content %}
+{% block head %}
+<script>
+function checkAll(bx) {
+  var cbs = document.getElementsByTagName('input');
+  for(var i=0; i < cbs.length; i++) {
+    if(cbs[i].type == 'checkbox') {
+      cbs[i].checked = bx.checked;
+    }
+  }
+}
+</script>
+{% endblock %}
 
+{% block content %}
     <form action="makeurl" method="post">
         <div id="left">
+            <input type="checkbox" onclick="checkAll(this)" id="check-all">
+            <label for="check-all"><span></span>Select all courses</label><br><br>
+
             {% for name in titles %}
                 <input type="checkbox" id="name-['{{name}}']" name="name" value="{{name}}">
                 <label for="name-['{{name}}']"><span></span>{{name}}</label><br>
