@@ -13,9 +13,6 @@ from flask import (Flask, render_template, request,
 
 import gehol
 
-# should have a DOMAIN (eg "http://127.0.0.1:5000/" with trailing "/"),
-# MAX_URL (eg 10), KEY (eq "wskj§gbqé(JHtzMK|§JFHQg$`ù"), DEBUG (eg True)
-# and ROOT_DIR (eg "/home/nginx/gehol/")
 from config import *
 
 
@@ -92,6 +89,7 @@ def getcal(h):
                 j = f.read()
         except IOError:
             return abort(404)
+
         data = json.loads(j)
         urls, selected = data['urls'], data['selected']
 
@@ -100,9 +98,7 @@ def getcal(h):
             cal.events = cal.events + gehol.get_cal(url).events
         cal = gehol.filter_events(cal, selected)
 
-        resp = Response(response=str(cal),
-                    mimetype="text/calendar")
-
+        resp = Response(response=str(cal), mimetype="text/calendar")
         return resp
 
 if __name__ == "__main__":
