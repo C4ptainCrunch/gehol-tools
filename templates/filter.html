@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Gehol tools</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-</head>
+{% extends "base.html" %}
+{% block content %}
 
-<body>
     <form action="makeurl" method="post">
-        <p>
+        <div id="left">
             {% for name in titles %}
-                <input type="checkbox" name="name" value="{{name}}">{{name}}<br>
+                <input type="checkbox" id="name-['{{name}}']" name="name" value="{{name}}">
+                <label for="name-['{{name}}']"><span></span>{{name}}</label><br>
             {% endfor %}
             <input type="hidden" value="{{persist}}" name="persist">
-            <input type="submit" value="send">
-        </p>
-    </form>
-</body>
+        </div>
+            <input type="submit" value="Filter courses">
 
-</html>
+    </form>
+<a href="/" class="gohome">Go back home</a>
+{% endblock %}
