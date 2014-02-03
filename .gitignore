@@ -1,0 +1,4 @@
+*.pyc
+data/
+config.py
+*.ics
