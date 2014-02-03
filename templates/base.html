@@ -14,6 +14,11 @@
             color: white;
         }
 
+        #content {
+            width: 800px;
+            margin: 0 auto;
+        }
+
         textarea, input {
             color: white;
             background-color:rgba(255,255,255,0.1);
@@ -70,13 +75,31 @@
         .gohome {
             font-size: 0.7em;
         }
+
+        h1 a {
+            text-decoration: none;
+        }
+
+        #bottom {
+            font-size: 0.8em;
+            position: absolute;
+            bottom: 10px;
+            left: 0px;
+            width: 100%;
+
+        }
     </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 </head>
 
 <body>
-    <h1>Gehol Tools</h1>
+<div id="content">
+    <h1><a href="/">Gehol Tools</a></h1>
 {% block content %}{% endblock %}
+</div>
+<p id="bottom">Source code available over <a href="https://github.com/C4ptainCrunch/gehol-tools">there</a><br>
+(Apache 2 license)<br>
+Feel free to send me an <a href="mailto:nikita.marchant@ulb.ac.be">email</a> or file an <a href="https://github.com/C4ptainCrunch/gehol-tools/issues/new">issue</a> on GitHub<p>
 </body>
 
 </html>
