@@ -46,6 +46,9 @@ def filter():
             titles = set()
             for url in urls:
                 titles |= gehol.extract_names(gehol.get_cal(url))
+            titles = list(titles)
+            check = map(lambda x: "checked" if not "Guidance" in x else "", titles)
+            titles = zip(titles, check)
 
             persist = json.dumps(urls)
             return render_template('filter.html', titles=titles, persist=base64.b64encode(persist))

@@ -6,8 +6,8 @@
             <input type="checkbox" id="select_all">
             <label for="select_all"><span></span>Select all courses</label><br><br>
 
-            {% for name in titles %}
-                <input class="select_one" type="checkbox" id="name-['{{name}}']" name="name" value="{{name}}">
+            {% for name, check in titles %}
+                <input class="select_one" type="checkbox" id="name-['{{name}}']" name="name" value="{{name}}" {{check}}>
                 <label for="name-['{{name}}']"><span></span>{{name}}</label><br>
             {% endfor %}
             <input type="hidden" value="{{persist}}" name="persist">
