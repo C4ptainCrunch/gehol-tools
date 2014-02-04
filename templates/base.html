@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Gehol tools</title>
-    {% block head %}
-    {% endblock %}
     <link href='http://fonts.googleapis.com/css?family=Carme' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     <style>
         body {
             background-image:url("/static/stardust.png");
@@ -83,11 +82,14 @@
 
         #bottom {
             font-size: 0.8em;
-            position: absolute;
-            bottom: 10px;
-            left: 0px;
+            position: relative;
             width: 100%;
+            margin-top: 150px;
+        }
 
+        .some_selected + label span {
+            opacity: 0.5;
+            filter: alpha(opacity=70);
         }
     </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
