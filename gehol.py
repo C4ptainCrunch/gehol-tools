@@ -41,6 +41,6 @@ def filter_events(cal, only):
 
 def clean_cal(cal):
     for event in cal.events:
-        if not event.description == 'Professeur:  \\n Assistant':
+        if event.description == 'Professeur:  \\n Assistant':
             event.name += ' (TP)'
         event.description = ""
