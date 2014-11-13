@@ -38,3 +38,9 @@ def filter_events(cal, only):
     cal = cal.clone()
     cal.events = filter(lambda x: x.name in only, cal.events)
     return cal
+
+def clean_cal(cal):
+    for event in cal.events:
+        if not event.description == 'Professeur:  \\n Assistant':
+            event.name += ' (TP)'
+        event.description = ""

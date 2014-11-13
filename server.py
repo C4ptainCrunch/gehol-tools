@@ -101,6 +101,8 @@ def getcal(h):
             cal.events = cal.events + gehol.get_cal(url).events
         cal = gehol.filter_events(cal, selected)
 
+        gehol.clean_cal(cal)
+
         resp = Response(response=str(cal), mimetype="text/calendar")
         return resp
 
