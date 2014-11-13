@@ -10,7 +10,7 @@ import ics
 
 def get_cal(url):
     o = urlparse(url)
-    if not o.scheme == 'http' or not o.netloc == 'scientia-web.ulb.ac.be':
+    if not o.scheme == 'http' or not (o.netloc == 'scientia-web.ulb.ac.be' or o.netloc == 'mongehol.ulb.ac.be'):
         raise ValueError('Must be an http gehol url.')
 
     i = 0
